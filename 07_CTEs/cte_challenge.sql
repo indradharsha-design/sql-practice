@@ -17,3 +17,18 @@ REQUIREMENTS:
 4. Display department and total_salary.
 5. Sort by total_salary in descending order.
 */
+
+
+WITH department_expenses AS (
+    SELECT
+        department,
+        SUM(salary) AS total_salary
+    FROM employees
+    GROUP BY department
+)
+SELECT
+    department,
+    total_salary
+FROM department_expenses
+WHERE total_salary > 200000
+ORDER BY total_salary DESC;
