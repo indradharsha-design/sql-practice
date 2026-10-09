@@ -23,3 +23,22 @@ REQUIREMENTS:
    salary_category, and bonus_amount.
 5. Sort by bonus_amount in descending order.
 */
+
+
+SELECT
+    first_name,
+    department,
+    salary,
+    CASE
+        WHEN salary >= 80000 THEN 'High'
+        WHEN salary >= 60000 THEN 'Medium'
+        ELSE 'Low'
+    END AS salary_category,
+    CASE
+        WHEN salary >= 80000 THEN salary * 0.15
+        WHEN salary >= 60000 THEN salary * 0.10
+        ELSE salary * 0.05
+    END AS bonus_amount
+FROM employees
+ORDER BY bonus_amount DESC;
+
