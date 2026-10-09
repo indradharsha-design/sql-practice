@@ -90,3 +90,24 @@ order by sales_records DESC;
 --Include only regions where the highest sale exceeds 1500.
 --Sort by highest_sale descending.
 
+SELECT 
+    region,
+    MAX(sale_amount) as highest_sale,
+    MIN(sale_amount) as lowest_sale
+from sales
+group by region
+having MAX(sale_amount) >1500
+order by highest_sale DESC;
+
+--Ex.5
+--Write a query to find each salesperson's average sale amount, 
+--showing only salespeople whose average sale is greater than $1,000. 
+--Sort the results by average sale from highest to lowest.
+
+SELECT 
+    salesperson,
+    AVG(sale_amount) as average_sales
+from sales
+group by salesperson
+having AVG(sale_amount)>1000
+order by average_sales DESC;
