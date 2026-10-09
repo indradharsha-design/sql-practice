@@ -1,4 +1,13 @@
-/*The relationship is: 
+
+/*
+PROJECT: SQL Practice
+MODULE: 04 - Joins
+FILE: inner_joins.sql
+
+OBJECTIVE:
+Combine employee, salary and budget information.
+
+The relationship is: 
 employees.department = departments.department_name
 
 Question:

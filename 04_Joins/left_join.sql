@@ -1,4 +1,12 @@
+
 /*
+PROJECT: SQL Practice
+MODULE: 04 - Joins
+FILE: left_joins.sql
+
+OBJECTIVE:
+Combine employee and departmentinformation.
+
 question: Display all departments, including departments that have no employees.
 
 Requirements:

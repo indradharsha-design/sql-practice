@@ -1,4 +1,11 @@
 /*
+PROJECT: SQL Practice
+MODULE: 04 - Joins
+FILE: right_joins.sql
+
+OBJECTIVE:
+Combine employee, department, and budget information.
+
 question: Display all employees and their matching department information, including employees whose department has no match in the departments table.
 
 Requirements:
