@@ -26,3 +26,4 @@ on e.department = d.department_name
 INNER JOIN department_managers AS dm
 on d.department_id = dm.department_id
 ORDER BY d.department_name, e.salary DESC;
+
