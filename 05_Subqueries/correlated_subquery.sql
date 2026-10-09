@@ -77,3 +77,27 @@ SELECT min(e2.salary)
     WHERE e2.department = 'Finance'
 )
 ORDER BY e.salary DESC;
+
+/*
+Exercise 4: Employees hired before the earliest hire date in IT
+Find employees from all departments who were hired before the earliest-hired IT employee.
+
+Return:
+first_name
+last_name
+department
+hire_date */
+
+
+SELECT
+    e.first_name,
+    e.last_name,
+    e.department,
+    e.hire_date
+FROM employees AS e
+WHERE e.hire_date < (
+SELECT min(hire_date)
+    FROM employees AS e2
+    WHERE e2.department = 'IT'
+)
+ORDER BY e.hire_date;
