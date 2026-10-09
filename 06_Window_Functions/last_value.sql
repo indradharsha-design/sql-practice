@@ -27,3 +27,5 @@ SELECT
     ) AS last_salary
 FROM employees
 ORDER BY department, salary ASC;
+
+
