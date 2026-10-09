@@ -42,4 +42,3 @@ SELECT
 FROM employees
 GROUP BY department
 ORDER BY employee_count DESC;
-
