@@ -1,19 +1,23 @@
 /*
-
 PROJECT: SQL Practice
 
 MODULE: 05 - Subqueries
 
 FILE: in_subquery.sql
 
-OBJECTIVE:examples and exercises using IN
+CONCEPTS:
+1. IN operator with a subquery
+2. Filtering using department budgets
+3. IN with GROUP BY and HAVING
 
-Practise SQL subqueries using the IN operator
-to find employees working in departments
-located in New York.
-
+OBJECTIVE:
+Practise using IN subqueries to filter records
+based on conditions from one or more queries.
 */
---Write a query to find employees who belong to departments located in New York.
+
+
+-- Example 1: Employees in departments located in New York
+
 SELECT
     first_name,
     last_name,
@@ -26,8 +30,8 @@ WHERE department IN (
 )
 ORDER BY department, last_name;
 
---Task: Find employees who work in departments with an annual budget greater than $500,000.
---Hint: The inner query should retrieve department names from departments where annual_budget > 500000. Use those names in the outer query with IN.
+
+-- Example 2: Employees in departments with a budget above $500,000
 
 SELECT
     first_name,
@@ -36,6 +40,24 @@ SELECT
     salary
 FROM employees
 WHERE department IN (
-    SELECT department_name from departments where annual_budget>50000
+    SELECT department_name
+    FROM departments
+    WHERE annual_budget > 500000
 )
 ORDER BY salary DESC;
+
+
+-- Example 3: Employees in departments with at least 3 employees
+
+SELECT
+    first_name,
+    last_name,
+    department
+FROM employees
+WHERE department IN (
+    SELECT department
+    FROM employees
+    GROUP BY department
+    HAVING COUNT(*) >= 3
+)
+ORDER BY department, last_name;
