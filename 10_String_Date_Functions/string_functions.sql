@@ -87,3 +87,16 @@ SELECT
     EXTRACT(MONTH FROM hire_date) AS hire_month
 FROM employees
 ORDER BY hire_date;
+
+
+
+-- Example 7: Calculate days since hire date
+-- PostgreSQL syntax
+
+SELECT
+    first_name,
+    hire_date,
+    CURRENT_DATE AS today,
+    CURRENT_DATE - hire_date AS days_employed
+FROM employees
+ORDER BY days_employed DESC;
