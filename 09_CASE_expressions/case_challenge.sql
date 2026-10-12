@@ -42,3 +42,10 @@ SELECT
 FROM employees
 ORDER BY bonus_amount DESC;
 
+
+
+command git add 09_CASE_expressions/case_challenge.sql
+command git add -u
+command git commit -m "Add CASE expressions practice"
+command git push
+command git status
