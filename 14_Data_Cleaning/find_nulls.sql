@@ -14,4 +14,5 @@ FROM employees
 WHERE department IS NULL
    OR salary IS NULL;
 
-   --Note: If your sample data has no missing values in those columns, the query will return zero rows. That's a valid result.
+   --Note: If your sample data has no missing values in those columns, 
+   the query will return zero rows. That's a valid result.
