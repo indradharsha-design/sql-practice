@@ -50,3 +50,16 @@ Use a window function to rank employees by salary within each department,
 then return only rank 1.*/
 
 
+with employee_rank as(
+    select 
+    department,
+    first_name,
+    salary,
+    rank() OVER(partition by department ORDER BY salary DESC) as emp_rank
+from employees
+    ) SELECT 
+    department,
+    first_name,
+    salary
+from employee_rank
+where emp_rank =1;
